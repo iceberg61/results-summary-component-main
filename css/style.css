@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+    /* colors */
+    /* primary colors */
+    --clr-Light-red: 0, 100%, 67%;
+    --clr-Orangey-yellow: 39, 100%, 56%;
+    --clr-Green-teal: 166, 100%, 37%;
+    --clr-Cobalt-blue: 234, 85%, 45%;
+    /* Gradients */
+    --grd-Light-slate-blue-background: 252, 100%, 67%;
+    --grd-Light-royal-blue-background: 241, 81%, 54%;
+    --grd-Violet-blue-circle: 256, 72%, 46%, 1;
+    --grd-Persian-blue-circle: 241, 72%, 46%, 0;
+    /* Neutral */
+    --neu-White: 0, 0%, 100%;
+    --neu-Pale-blue: 221, 100%, 96%;
+    --neu-Light-lavender: 241, 100%, 89%;
+    --neu-Dark-gray-blue: 224, 30%, 27%;
+    /* font-size */
+    --fs : 1.8rem
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: var(--fs);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    background-color: hsl(var(--neu-White));
+}
+
+.sub-p {
+    color: rgba(255, 255, 255, 0.603);
+}
+
+.measurement {
+    width: 100%;
+    height: 48rem;
+}
+
+.container {
+    border-radius: 3rem;
+    max-width: 70rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0.1rem 0.1rem 5rem hsl(var(--neu-Light-lavender));
+}
+
+.results-score {
+    border-radius: inherit;
+    background: linear-gradient(
+        to top,
+        hsl(var(--grd-Light-royal-blue-background)),
+        hsl(var(--grd-Light-slate-blue-background))
+    );
+    padding: 3rem 6rem;
+    text-align: center;
+    color: hsl(var(--neu-White));
+}
+
+.title {
+    padding-block: 1rem;
+}
+
+.rate-display {
+    border-radius: 50%;
+    background: linear-gradient(
+        to top, 
+        hsl(var(--grd-Persian-blue-circle)),
+        hsl(var(--grd-Violet-blue-circle))
+    );
+    padding: 5rem;
+    margin-block: 2rem 1rem;
+}
+
+.rate-display span {
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+.results-score p {
+    font-size: 1.6rem;
+}
+
+.sub-title {
+    padding-bottom: 3rem;
+    font-size: 3rem;
+}
+
+.results-summary {
+    padding: 3rem 4rem;
+}
+
+.cards {
+    margin-block: 2rem 1rem;
+}
+
+.card {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1rem;
+    align-items: center;
+    padding: 1rem;
+    margin-block: 2.5rem;
+}
+
+.card svg  {
+    margin-right: 1rem;
+}
+
+.card span {
+    display: flex;
+    align-items: center;
+}
+
+.overall-rate {
+    padding-inline: .5rem;
+    color: hsl(var(--neu-Dark-gray-blue));
+}
+
+.counting-rate {
+    color:  rgba(20, 20, 75, 0.5);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.reaction {
+    background-color: rgba(199, 50, 50, 0.048);
+    color: hsl(var(--clr-Light-red));
+}
+
+.memory {
+    background-color: rgba(255, 208, 0, 0.048);
+    color: hsl(var(--clr-Orangey-yellow));
+}
+
+.verbal {
+    background-color: rgba(21, 196, 21, 0.048);
+    color: hsl(var(--clr-Green-teal));
+}
+
+.visual {
+    background-color: rgba(0, 0, 255, 0.048);
+    color: hsl(var(--clr-Cobalt-blue));    
+}
+
+button {
+    width: 100%;
+    padding: 2rem;
+    letter-spacing: 0.05rem;
+    border: none;
+    border-radius: 4rem;
+    color: hsl(var(--neu-White));
+    background-color: hsl(var(--neu-Dark-gray-blue));
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: hsl(var(--grd-Light-royal-blue-background));
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        
+    }
+    
+    .results-score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .rate-display {
+        width: 17.5rem;
+        height: 17.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .sub-p {
+        font-size: 2rem;
+    }
+}
